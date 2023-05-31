@@ -45,42 +45,45 @@ const btn = document.querySelector('.js_btn');
 const msg = document.querySelector('.js_msg');
 const balance = document.querySelector('.js_balance');
 
-const numSelect = select.value;
 
 
-//console.log(numBet);
-//const balanceDue = parseInt(balance.innerHTML);
-//console.log(balanceDue);
+let balanceDue = 50;
+console.log(balanceDue);
 
 
 // FUNCIONES
-/* La función del enunciado */
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
-const randomNumber = getRandomNumber(6);
-console.log(randomNumber);
 
 function wonBet () {
-    const numBet = parseInt(bet.innerHTML);
-    const addBet = numBet*2 + balance;
+    const numBet = parseInt(bet.value);
+    const addBet = numBet*2 + balanceDue;
     return addBet;
 }
+wonBet ();
+console.log(wonBet);
+
 function lostBet () {
-    const numBet = parseInt(bet.innerHTML);
-    const subBet = balance - subBet;
-    return addBet;
+    const numBet = parseInt(bet.value);
+    const subBet = balanceDue - numBet;
+    return subBet;
 }
 
 function handleClickBtn (e) {
     e.preventDefault();
-    if (numSelect === randomNumber){
+    const numSelect = select.value;
+    const randomNumber = getRandomNumber(6);
+    console.log(randomNumber);
+    if (parseInt(numSelect) === randomNumber){
         wonBet();
-        msg.innerHTML = "Has ganado el doble de lo apostado :)";
+        console.log(wonBet);
+        //msg.innerHTML = "Has ganado el doble de lo apostado :)";
     } 
     else {
         lostBet();
-        msg.innerHTML = "Has pedido lo apostado";
+        console.log(lostBet);
+        //msg.innerHTML = "Has perdido lo apostado";
     }
 }
 

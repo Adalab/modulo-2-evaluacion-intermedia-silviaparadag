@@ -59,16 +59,15 @@ function getRandomNumber(max) {
 
 function wonBet () {
     const numBet = parseInt(bet.value);
-    const addBet = numBet*2 + balanceDue;
-    return addBet;
+    balanceDue = numBet*2 + balanceDue; 
+    balance.innerHTML = balanceDue;
 }
-wonBet ();
-console.log(wonBet);
+
 
 function lostBet () {
     const numBet = parseInt(bet.value);
-    const subBet = balanceDue - numBet;
-    return subBet;
+    balanceDue = balanceDue - numBet;
+    balance.innerHTML = balanceDue;
 }
 
 // function balanceDueResult () {
@@ -82,13 +81,11 @@ function handleClickBtn (e) {
     console.log(randomNumber);
     if (parseInt(numSelect) === randomNumber){
         wonBet();
-        console.log(wonBet);
-        msg.innerHTML = "Has ganado el doble de lo apostado :)";
+        msg.innerHTML = "Has ganado el doble de lo apostado 🥳";
     } 
     else {
         lostBet();
-        console.log(lostBet);
-        msg.innerHTML = "Has perdido lo apostado";
+        msg.innerHTML = "Has perdido lo apostado 😩";
     }
 }
 

@@ -11,9 +11,30 @@
 
 <body>
     <header class="header">
-        <h1 class="title">Clase</h1>
-        <h2 class="subtitle">¡¡Abrir consola!!</h2>
+        <h1 class="title">Dados y Apuestas</h1>
+
     </header>
+    <main class="main">
+        <h3 class="subtitle">Introduce aquí tu jugada</h3>
+        <div class="select">
+            <select class="js_select" name="" id="">
+                <option class="select_box" value="1">1</option>
+                <option class="select_box" value="2">2</option>
+                <option class="select_box" value="3">3</option>
+                <option class="select_box" value="4">4</option>
+                <option class="select_box" value="5">5</option>
+                <option class="select_box" value="6">6</option>
+            </select>
+            <input class="bet js_bet" type="number" placeholder="¿Cuánto apuestas" value="10">
+            <button class="btn js_btn">Play</button>
+        </div>
+        <h3 class="message js_msg">Vamos a jugar!</h3>
+        <div class="balance">
+            <p>Saldo:</p>
+            <p class="js_balance">50</p>
+        </div>
+
+    </main>
 
     <script src="./js/main.js"></script>
 </body>

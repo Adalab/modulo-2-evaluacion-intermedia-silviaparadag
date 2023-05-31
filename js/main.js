@@ -25,14 +25,15 @@ a) Crear contantes de JS:
 b) Funciones:
     i.  Función del número random
         - Generar el número ALEATORIO y guardarlo en una variable
-    ii. Función del saldo pendiente (está funcion a lo mejor puede estar dentro del evento)
+    ii. Función de sumar el doble de lo apostado si se gana y restar si se pierde.
+    iii. Función del saldo pendiente (está funcion a lo mejor puede estar dentro del evento)
      
 c) Escuchar eventos:
     i.  Evento tipo 'click' sobre Play
     ii. Crear la función del evento click:
-        - obtener el valor del número apostado (ev.currentTarget?
-        - obtener el valor del número randoM (ev.currentTarget) 
-        - Valor del selet ver si coincide con el SELECT
+        - obtener el valor del número apostado
+        - obtener el valor del número random
+        - Valor del select ver si coincide con el random
         - con innerHTML cambión el contenido del mensaje.
         - con innerHTM debería guardar el resultado del saldo pendiente.
 */
@@ -70,6 +71,10 @@ function lostBet () {
     return subBet;
 }
 
+// function balanceDueResult () {
+//     const updatedBalanceDue = balanceDue -  ;
+// }
+
 function handleClickBtn (e) {
     e.preventDefault();
     const numSelect = select.value;
@@ -78,12 +83,12 @@ function handleClickBtn (e) {
     if (parseInt(numSelect) === randomNumber){
         wonBet();
         console.log(wonBet);
-        //msg.innerHTML = "Has ganado el doble de lo apostado :)";
+        msg.innerHTML = "Has ganado el doble de lo apostado :)";
     } 
     else {
         lostBet();
         console.log(lostBet);
-        //msg.innerHTML = "Has perdido lo apostado";
+        msg.innerHTML = "Has perdido lo apostado";
     }
 }
 

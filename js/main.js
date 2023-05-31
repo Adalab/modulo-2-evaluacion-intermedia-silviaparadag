@@ -39,7 +39,7 @@ c) Escuchar eventos:
 */
 
 
-// CONSTANTES
+// QS
 const select = document.querySelector('.js_select');
 const bet = document.querySelector('.js_bet');
 const btn = document.querySelector('.js_btn');
@@ -47,9 +47,10 @@ const msg = document.querySelector('.js_msg');
 const balance = document.querySelector('.js_balance');
 
 
-
+// VARIABLES GLOBALES
 let balanceDue = 50;
 console.log(balanceDue);
+
 
 
 // FUNCIONES
@@ -59,43 +60,54 @@ function getRandomNumber(max) {
 
 function wonBet () {
     const numBet = parseInt(bet.value);
-    const addBet = numBet*2 + balanceDue;
-    return addBet;
+    balanceDue = numBet*2 + balanceDue;
+    balance.innerHTML = balanceDue;
 }
-wonBet ();
-console.log(wonBet);
 
 function lostBet () {
     const numBet = parseInt(bet.value);
-    const subBet = balanceDue - numBet;
-    return subBet;
+    balanceDue = balanceDue - numBet;
+    balance.innerHTML = balanceDue;
+}
+
+const writeMsg = (message) => {
+    msg.innerHTML = message;
 }
 
 // function balanceDueResult () {
 //     const updatedBalanceDue = balanceDue -  ;
 // }
 
-function handleClickBtn (e) {
+// Mejor usar función arrrow con variable:
+
+const handleClickBtn = (e) => {
     e.preventDefault();
     const numSelect = select.value;
-    const randomNumber = getRandomNumber(6);
-    console.log(randomNumber);
+    //console.log(numSelect);
+    const randomNumber = getRandomNumber(6); 
+    // Esto tiene que estar aquí, para que el random aparezca cuando "hacemos el evento Click", cada vez que hagamos click.
+    //console.log(randomNumber);
     if (parseInt(numSelect) === randomNumber){
+        //msg.innerHTML = "Has ganado el doble de lo apostado  😀";
+        writeMsg ("Has ganado el doble de lo apostado  😀"); 
         wonBet();
-        console.log(wonBet);
-        msg.innerHTML = "Has ganado el doble de lo apostado :)";
     } 
     else {
+        //msg.innerHTML = "Has perdido lo apostado 😟";
+        writeMsg ("Has perdido lo apostado 😟");
         lostBet();
-        console.log(lostBet);
-        msg.innerHTML = "Has perdido lo apostado";
     }
 }
 
 // EVENTOS
+/* 
+const handleClickBtn = (event) => {
+    console.log('Holis');
+} 
+*/
 
 btn.addEventListener('click', handleClickBtn);
 
-
-
-
+/*btn.addEventListener('click', (event) => {
+    console.log('Holis')
+});*/

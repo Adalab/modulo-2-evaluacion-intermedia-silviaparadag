@@ -16,18 +16,21 @@
     </header>
     <main class="main">
         <h3 class="subtitle">Introduce aquí tu jugada</h3>
-        <div class="select">
-            <select class="js_select" name="" id="">
-                <option class="select_box" value="1">1</option>
-                <option class="select_box" value="2">2</option>
-                <option class="select_box" value="3">3</option>
-                <option class="select_box" value="4">4</option>
-                <option class="select_box" value="5">5</option>
-                <option class="select_box" value="6">6</option>
-            </select>
-            <input class="bet js_bet" type="number" placeholder="¿Cuánto apuestas">
-            <button class="btn js_btn">Play</button>
-        </div>
+        <form class="select">
+            <div class="select">
+                <select class="js_select" name="" id="">
+                    <option hidden selected>¿Qué número apuestas del 1 al 6</option>
+                    <option class="select_box" value="1">1</option>
+                    <option class="select_box" value="2">2</option>
+                    <option class="select_box" value="3">3</option>
+                    <option class="select_box" value="4">4</option>
+                    <option class="select_box" value="5">5</option>
+                    <option class="select_box" value="6">6</option>
+                </select>
+                <input class="bet js_bet" type="number" placeholder="¿Cuánto apuestas">
+                <button class="btn js_btn">Play</button>
+            </div>
+        </form>
         <h3 class="message js_msg">Vamos a jugar!</h3>
         <div class="balance">
             <p>Saldo:</p>

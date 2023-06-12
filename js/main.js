@@ -47,9 +47,8 @@ const msg = document.querySelector('.js_msg');
 const balance = document.querySelector('.js_balance');
 
 
-
+// VARIABLES GLOBALES
 let balanceDue = 50;
-console.log(balanceDue);
 
 
 // FUNCIONES
@@ -70,9 +69,9 @@ function lostBet () {
     balance.innerHTML = balanceDue;
 }
 
-// function balanceDueResult () {
-//     const updatedBalanceDue = balanceDue -  ;
-// }
+const writeMsg = (message) => {
+    msg.innerHTML = message;
+}
 
 function handleClickBtn (e) {
     e.preventDefault();
@@ -81,11 +80,11 @@ function handleClickBtn (e) {
     console.log(randomNumber);
     if (parseInt(numSelect) === randomNumber){
         wonBet();
-        msg.innerHTML = "Has ganado el doble de lo apostado 🥳";
+        writeMsg("Has ganado el doble de lo apostado 🥳");
     } 
     else {
         lostBet();
-        msg.innerHTML = "Has perdido lo apostado 😩";
+        writeMsg("Has perdido lo apostado 😩");
     }
 }
 

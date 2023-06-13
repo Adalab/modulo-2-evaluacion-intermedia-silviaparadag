@@ -6,10 +6,12 @@
     list-style: none;
 }
 
+
 .header {
-    padding: 10px 10px 10px;
+    padding: 20px 10px;
     text-align: center;
-    border-bottom: dotted 2px lightgray;
+    border-bottom: dotted 2px white;
+    background-color: rgba(32, 178, 171, 0.358);
 }
 
 .subtitle {
@@ -23,6 +25,8 @@
 }
 
 .main {
+    height: 100vh;
+    background-color: rgba(32, 178, 171, 0.358);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -32,11 +36,26 @@
 
 .select {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select__mainbox {
+    padding: 8px;
+    color: gray;
+    font-style: italic;
+}
+
+.bet {
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
 }
 
 .btn {
     width: 120px;
+    height: 30px;
     border: 0;
     padding: 3px;
     border-radius: 50vh;
@@ -44,7 +63,28 @@
     color: white;
 }
 
+.btn:hover {
+    color: lightcoral;
+    box-shadow: 0 2px 2px lightcoral;
+    transition: all 0.2s ease;
+    font-size: 1.2rem;
+}
+
 .balance {
     display: flex;
     gap: 10px;
+}
+
+.footer {
+    width: 100%;
+    background-color: lightseagreen;
+    color: white;
+    height: 5vh;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    padding: 0 20px;
 }

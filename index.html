@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body>
+<body class="body">
     <header class="header">
         <h1 class="title">Dados y Apuestas</h1>
 
@@ -18,7 +18,7 @@
         <h3 class="subtitle">Introduce aquí tu jugada</h3>
         <form class="select">
             <div class="select">
-                <select class="js_select" name="" id="">
+                <select class="select__mainbox js_select" name="" id="">
                     <option hidden selected>¿Qué número apuestas del 1 al 6</option>
                     <option class="select_box" value="1">1</option>
                     <option class="select_box" value="2">2</option>
@@ -27,7 +27,7 @@
                     <option class="select_box" value="5">5</option>
                     <option class="select_box" value="6">6</option>
                 </select>
-                <input class="bet js_bet" type="number" placeholder="¿Cuánto apuestas">
+                <input class="bet js_bet" type="number" placeholder="¿Cuánto apuestas?">
                 <button class="btn js_btn">Play</button>
             </div>
         </form>
@@ -38,6 +38,11 @@
         </div>
 
     </main>
+
+    <footer class="footer">
+        <p class="footer__txt">Promoción Trótula</p>
+        <p class="footer__txt2">© Adalab 2023</p>
+    </footer>
 
     <script src="./js/main.js"></script>
 </body>
